@@ -96,7 +96,7 @@ action :install do
   end
 
   file ::File.join(vhost_dir, "nginx_config", "location_root") do
-    action :touch
+    action :create_if_missing
   end
 
   mysql_database "Create database for this wordpress instance" do
